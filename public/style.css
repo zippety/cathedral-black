@@ -45,24 +45,31 @@ body{
 }
 
 .portal-glyph{
-  font-size:clamp(120px,18vw,220px);
-  color:var(--gold);
-  line-height:1;
-  margin-bottom:40px;
-  text-shadow:0 0 80px rgba(212,169,71,.5);
+  width:clamp(280px,40vw,480px);
+  max-width:100%;
+  margin-bottom:32px;
   animation:portalPulse 4s ease-in-out infinite;
-  will-change:transform,text-shadow;
+  will-change:transform,filter;
   user-select:none;
+  line-height:0;
+}
+
+.sankofa-img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:8px;
+  filter:drop-shadow(0 0 60px rgba(212,169,71,.35));
 }
 
 @keyframes portalPulse{
   0%,100%{
-    text-shadow:0 0 60px rgba(212,169,71,.35),0 0 20px rgba(212,169,71,.2);
+    filter:drop-shadow(0 0 40px rgba(212,169,71,.3)) drop-shadow(0 0 12px rgba(212,169,71,.2));
     transform:scale(1);
   }
   50%{
-    text-shadow:0 0 120px rgba(212,169,71,.8),0 0 40px rgba(212,169,71,.4);
-    transform:scale(1.025);
+    filter:drop-shadow(0 0 80px rgba(212,169,71,.6)) drop-shadow(0 0 24px rgba(212,169,71,.35));
+    transform:scale(1.02);
   }
 }
 
