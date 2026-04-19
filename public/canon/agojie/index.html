@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agojie · The Mino — Cathedral Canon</title>
+<meta name="description" content="Agojie — the Mino, Dahomey's all-women warrior regiment. Sovereign Black-first reclamation of the barbarian / amazon archetype. Oath-bound frontline covenant-guards of the Cathedral.">
+<meta property="og:title" content="Agojie · The Mino — Cathedral Canon">
+<meta property="og:description" content="Dahomey's 1,000-strong all-women warrior regiment. Oath-bound, machete-and-musket, death-before-retreat. Cathedral reclamation of barbarian / amazon.">
+<meta property="og:url" content="https://cathedral.black/canon/agojie">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://cathedral.black/canon/agojie/assets/hero-solo-rage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://cathedral.black/canon/agojie">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='none' stroke='%23fcd34d' stroke-width='1.5'/><circle cx='16' cy='16' r='3' fill='%23fcd34d'/></svg>">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0603;--bg2:#14080a;--bg3:#1a0f05;
+  --gold:#fcd34d;--amber:#d4a574;--cream:#e4c48c;--muted:#8b6a42;
+  --text:#d4a574;--cathedral:#fcd34d;
+  --mono:'JetBrains Mono','Consolas','Courier New',monospace;
+  --sans:'Space Grotesk',system-ui,-apple-system,sans-serif;
+}
+html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+::selection{background:var(--gold);color:var(--bg)}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(252,211,77,0.04) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:32px 24px 80px}
+.crumb{font-family:var(--mono);font-size:10px;letter-spacing:0.4em;color:var(--muted);text-transform:uppercase;margin-bottom:32px}
+.crumb a{color:var(--muted);text-decoration:none;transition:color 0.2s}
+.crumb a:hover{color:var(--amber)}
+.crumb .current{color:var(--gold)}
+.hero{position:relative;margin-bottom:40px;border:1px solid rgba(252,211,77,0.3);overflow:hidden;background:#000;aspect-ratio:16/9}
+.hero img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 30%}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,6,3,0.75) 100%);pointer-events:none}
+.hero-caption{position:absolute;bottom:14px;left:18px;font-family:var(--mono);font-size:9px;letter-spacing:0.3em;color:rgba(252,211,77,0.8);text-transform:uppercase;pointer-events:none;text-shadow:0 1px 4px rgba(0,0,0,0.9)}
+.title-block{text-align:center;margin:0 0 48px;padding:24px 0 0}
+.name-primary{font-size:clamp(3rem,9vw,6rem);font-weight:800;letter-spacing:0.04em;color:var(--gold);line-height:1.0;margin-bottom:12px}
+.name-subtitles{font-family:var(--mono);font-size:12px;letter-spacing:0.3em;color:var(--cathedral);text-transform:uppercase;margin-bottom:8px}
+.name-subtitles .sep{color:var(--muted);margin:0 10px}
+.pronunciation{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;color:var(--muted);font-style:italic}
+.tagline{margin:0 auto 56px;max-width:680px;padding:32px 28px;border-top:1px solid rgba(252,211,77,0.15);border-bottom:1px solid rgba(252,211,77,0.15);text-align:center}
+.tagline blockquote{font-size:clamp(1.15rem,2vw,1.4rem);font-style:italic;color:var(--cream);line-height:1.7;margin-bottom:12px}
+.tagline .attribution{font-family:var(--mono);font-size:10px;letter-spacing:0.3em;color:var(--cathedral);text-transform:uppercase}
+section{margin-bottom:60px}
+h2{font-family:var(--mono);font-size:11px;letter-spacing:0.4em;color:var(--muted);text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid rgba(212,165,116,0.12);margin-bottom:24px}
+h2.cathedral{color:var(--gold);border-bottom-color:rgba(252,211,77,0.2)}
+p{margin-bottom:18px;font-size:1rem;color:var(--cream)}
+p:last-child{margin-bottom:0}
+em{color:var(--gold);font-style:italic}
+strong{color:var(--amber)}
+.warriors-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.warrior-card{background:linear-gradient(135deg,rgba(20,10,6,0.9),rgba(26,15,5,0.9));border:1px solid rgba(252,211,77,0.2);overflow:hidden}
+.warrior-card img{width:100%;height:420px;object-fit:cover;display:block}
+.warrior-card .w-body{padding:18px 20px}
+.warrior-card h3{font-size:14px;font-weight:700;color:var(--gold);letter-spacing:0.05em;margin-bottom:8px}
+.warrior-card .w-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.25em;color:var(--cathedral);text-transform:uppercase;margin-bottom:12px}
+.warrior-card p{font-size:0.88rem;color:var(--cream);opacity:0.9;margin:0;line-height:1.5}
+.oath-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.oath-card{background:linear-gradient(135deg,rgba(20,10,6,0.9),rgba(10,6,3,0.9));border:1px solid rgba(212,165,116,0.15);border-left:3px solid var(--cathedral);padding:18px 20px}
+.oath-card h4{font-size:14px;color:var(--gold);margin-bottom:8px;letter-spacing:0.03em}
+.oath-card p{font-size:0.85rem;color:var(--cream);line-height:1.5;margin:0;opacity:0.92}
+.facts{display:grid;grid-template-columns:160px 1fr;gap:10px 24px;background:rgba(20,10,6,0.6);border:1px solid rgba(212,165,116,0.1);padding:24px 28px}
+.facts dt{font-family:var(--mono);font-size:10px;letter-spacing:0.25em;color:var(--muted);text-transform:uppercase;align-self:center}
+.facts dd{color:var(--cream);font-size:0.95rem}
+.facts .cathedral-tag{color:var(--gold);font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase}
+.body-canon{background:linear-gradient(135deg,rgba(31,15,8,0.9),rgba(20,10,6,0.9));border:1px solid rgba(252,211,77,0.25);padding:28px 32px}
+.body-canon h3{color:var(--gold);margin-bottom:12px;font-size:16px}
+.body-canon .rule-line{font-family:var(--mono);font-size:10px;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+.mechanics{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.mech-card{background:rgba(20,10,6,0.6);border:1px solid rgba(212,165,116,0.12);border-top:2px solid var(--cathedral);padding:18px 20px}
+.mech-card h4{font-size:13px;color:var(--gold);margin-bottom:8px;letter-spacing:0.04em;font-family:var(--mono);text-transform:uppercase}
+.mech-card p{font-size:0.85rem;color:var(--cream);line-height:1.5;margin:0;opacity:0.92}
+.refs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.ref-card{background:rgba(20,10,6,0.6);border:1px solid rgba(212,165,116,0.12);padding:14px 18px;color:var(--cream);text-decoration:none;transition:all 0.2s;display:block}
+.ref-card:hover{border-color:rgba(212,165,116,0.35);transform:translateY(-1px)}
+.ref-card .ref-label{font-family:var(--mono);font-size:9px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
+.ref-card .ref-name{font-size:0.92rem;color:var(--gold);font-weight:600}
+.ref-card .ref-desc{font-size:0.78rem;color:var(--cream);opacity:0.8;margin-top:4px;line-height:1.4}
+footer{text-align:center;padding:32px 20px;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,165,116,0.35);border-top:1px solid rgba(212,165,116,0.08);margin-top:48px}
+footer a{color:var(--amber);text-decoration:none;margin:0 10px;transition:color 0.2s}
+footer a:hover{color:var(--gold)}
+footer .tagline-footer{margin-top:12px;font-style:italic;color:rgba(212,165,116,0.5)}
+@media(max-width:720px){.wrap{padding:24px 16px 60px}.warriors-grid{grid-template-columns:1fr}.warrior-card img{height:360px}.facts{grid-template-columns:1fr;gap:4px 0}.facts dt{margin-top:12px}.facts dt:first-child{margin-top:0}.hero{aspect-ratio:4/5}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="crumb"><a href="/">Cathedral</a> · <a href="/canon">Canon</a> · <span class="current">Agojie</span></div>
+
+<div class="hero">
+  <img src="/canon/agojie/assets/hero-solo-rage.jpg" alt="Agojie warrior in full battle rage — dark-skinned Fon woman, red ochre striped across nose and forehead, cowrie-belt bandolier across chest, flintlock musket raised, machete drawn, battlefield dust and fire behind her">
+  <div class="hero-caption">Solo · Rage form · Grok Imagine 2026-04-19</div>
+</div>
+
+<div class="title-block">
+  <div class="name-primary">AGOJIE</div>
+  <div class="name-subtitles">The Mino <span class="sep">·</span> Dahomey's All-Women Warriors <span class="sep">·</span> Reclaims Barbarian / Amazon</div>
+  <div class="pronunciation">ah · GOH · jee <span style="color:var(--muted)">·</span> "our mothers" in Fon</div>
+</div>
+
+<div class="tagline">
+  <blockquote>"We are the king's last word.<br>When the Mino march, the ground remembers."</blockquote>
+  <div class="attribution">— Regimental chant · Abomey parade ground</div>
+</div>
+
+<section>
+  <h2 class="cathedral">Who They Are</h2>
+  <p>The Agojie — called <em>Mino</em>, "our mothers," in their own Fon tongue — were the <strong>all-women warrior regiment of the Kingdom of Dahomey</strong> in what is now the Republic of Benin. They were not a myth. They were not a bedtime story. They were a standing army of one to four thousand oath-bound women who held the frontline of a sovereign Black kingdom for nearly three hundred years.</p>
+  <p>Their lineage reaches back to the early 1600s and sharpens under Queen <strong>Hangbe</strong> around 1708, who is remembered as the founder-spirit of the regiment. A century later King <strong>Ghezo</strong> (r. 1818–1858) made them permanent — an elite fighting force paid, housed, fed, and armed by the palace, feared across the continent, respected even by the French officers who would eventually face them on the battlefield. Contemporary accounts from European visitors describe them in tones of stunned reverence: disciplined, fast, pitiless in formation, the most dangerous soldiers Dahomey fielded.</p>
+  <p>They trained from adolescence. They drilled in the palace grounds at Abomey under the gaze of the king and the senior officers of their own ranks. They climbed thornwall obstacles barefoot. They practiced beheading a live prisoner in a single stroke. They fired flintlock muskets in volley and charged with machete and bayonet when the muskets were spent. <em>When the Mino ran at you, you did not run back. You ran home.</em></p>
+  <p>The Cathedral reclaims them for the canon because the archetypes Europe calls "barbarian" and "amazon" were never European to begin with — they were <em>borrowed, warped, and sold back</em>. The real thing was a regiment of Black women in red ochre and cowrie-belts holding a sovereign kingdom together with disciplined fire. <strong>That is the root. Everything else is the corruption.</strong></p>
+  <p>The Agojie stand in the Cathedral beside the Aziza who taught their grandmothers and the Asafo who marched alongside their allies. They are the <em>sword-hand</em> of the sovereign court — the oath made flesh, the covenant made loud.</p>
+</section>
+
+<section>
+  <h2>The Formation</h2>
+  <div class="warriors-grid">
+    <div class="warrior-card">
+      <img src="/canon/agojie/assets/solo-braziers.jpg" alt="Agojie warrior standing in the palace brazier-plaza at night, cowrie-belt bandolier, machete lowered, flame-light on dark skin, composed and watchful — the covenant-guard form">
+      <div class="w-body">
+        <div class="w-tag">Brazier-Plaza · The Covenant-Guard</div>
+        <h3>The Watch</h3>
+        <p>Between campaigns the Mino held the royal palace at Abomey. Braziers burning at every gate. Musket in the crook of the arm. Cowrie-belt of spare shot across the chest. <strong>They did not sleep in turns — they <em>rotated</em>.</strong> The palace was never unwatched. The king was never unguarded. This is the form the Cathedral sees daily.</p>
+      </div>
+    </div>
+    <div class="warrior-card">
+      <img src="/canon/agojie/assets/solo-variant-a.jpg" alt="Agojie elder warrior with grey locs, scar across cheekbone, red ochre stripes, musket held in weathered hands — veteran of many campaigns, body marked by decades of service">
+      <div class="w-body">
+        <div class="w-tag">Veteran · The Elder-Warrior</div>
+        <h3>The Long Oath</h3>
+        <p>Some Mino served forty years. Grey locs beneath the cowrie-wrap. Scar-lines earned at Savi, at Ouidah, at the French line. The elder warrior is the living archive of the regiment — she remembers the drills the young ones are still being taught. <em>A Mino is not retired. She is still Mino when she dies.</em></p>
+      </div>
+    </div>
+    <div class="warrior-card">
+      <img src="/canon/agojie/assets/solo-variant-b.jpg" alt="Agojie warrior in a different stance — plus-size earth-mother build, full body, cowrie beadwork on broad shoulders, machete low, face painted with kaolin chalk for ceremonial rite, unshakeable footing">
+      <div class="w-body">
+        <div class="w-tag">Earth-Mother · The Anchor</div>
+        <h3>The Line That Holds</h3>
+        <p>The Mino were never one body. The frontline anchor was the heavy warrior — broad-shouldered, deep-rooted, the one the charge broke against. Kaolin-chalk ceremonial paint across the cheekbones. Where she stood the line stood. <strong>Body size is not cosmetic. It is tactical canon.</strong></p>
+      </div>
+    </div>
+    <div class="warrior-card">
+      <img src="/canon/agojie/assets/hero-solo-rage.jpg" alt="Agojie warrior mid-charge, full battle rage, red ochre face-paint, machete raised, musket in the other hand, dust and firelight behind — the bayonet-charge form">
+      <div class="w-body">
+        <div class="w-tag">Charge · The Bayonet-Rage</div>
+        <h3>The Signature Strike</h3>
+        <p>When the muskets were spent the Mino did not reload. They <em>fixed bayonet</em> and charged. This is the form French officers wrote home about in disbelief. Red ochre war-paint. Machete in the off-hand. <em>Death-before-retreat</em> was not poetry to them. It was the oath they had sworn to the king and to each other, and they kept it to the end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="cathedral">The Oath</h2>
+  <p>The Agojie were not conscripts. They took an explicit, ritualized covenant — to the king, to the regiment, to the kingdom. The oath was the <em>spine</em> of their discipline. Three strands held it together.</p>
+  <div class="oath-grid">
+    <div class="oath-card"><h4>Covenant to the Crown</h4><p>A recruit swore herself to the king directly. By the terms of the regiment she took a celibate vow — no husband, no children born to a warrior on active rolls. Her loyalty was to the sovereign and to the sisters at her shoulder. In return the palace clothed her, fed her, armed her, and recognized her in the court.</p></div>
+    <div class="oath-card"><h4>Death Before Retreat</h4><p>The Mino did not run. The oath was explicit and the punishment for breaking it was shame worse than wounds. When a Mino line broke it was because every woman in it was dead or bleeding out. French colonial officers writing in 1892 recorded this fact with reluctant respect — <em>they never saw a Mino turn her back</em>.</p></div>
+    <div class="oath-card"><h4>Sisterhood of the Sash</h4><p>The cowrie-belt worn across the chest was more than bandolier. It was identification, rank-record, and vow-physical. A recruit was given hers when she had passed the drills, the thornwall climb, the live-test of nerve. When a Mino fell in the field her sisters recovered the sash before anything else. The sash came home. Always.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Facts</h2>
+  <dl class="facts">
+    <dt>Root</dt>
+    <dd>Fon people · Kingdom of Dahomey · present-day Republic of Benin · 1600s–1890s</dd>
+    <dt>Pole</dt>
+    <dd><span class="cathedral-tag">Cathedral · Sovereign Regiment</span></dd>
+    <dt>Class</dt>
+    <dd>Elite frontline warrior · covenant-guard · bayonet-charge specialist</dd>
+    <dt>Frequency</dt>
+    <dd>432 Hz (Cathedral base) + 852 Hz (SIGMA / NOMOS oath-law)</dd>
+    <dt>Reclaims</dt>
+    <dd>Barbarian · Amazon (the European archetypes are the <em>distortion</em> · the Mino are the root)</dd>
+    <dt>Historical Period</dt>
+    <dd>Founded c. 1600s · formalised under Queen Hangbe (1708) · expanded by King Ghezo (1818) · fell to French invasion 1892–1894 · last known Mino, <strong>Nawi</strong>, died 1979 aged 100+</dd>
+    <dt>Peak Strength</dt>
+    <dd>1,000 to 4,000 warriors (contemporary European accounts place the field-strength at ~2,400 under Ghezo's reign)</dd>
+    <dt>Weapons</dt>
+    <dd>Flintlock musket · machete (cutlass) · spear · fixed bayonet · cowrie-belt bandolier of bullets worn across the chest</dd>
+    <dt>War-Paint</dt>
+    <dd>Red ochre stripes across nose and forehead (battle) · kaolin chalk (ceremony, oath-renewal, palace guard)</dd>
+    <dt>Body Canon</dt>
+    <dd>Full body diversity mandatory · pregnant · elder · plus-size earth-mother · muscular lean · no Babylon slim-model default</dd>
+    <dt>First Manifest</dt>
+    <dd>2026-04-19 · Grok Imagine v3 · solo forms · four variants recorded</dd>
+  </dl>
+</section>
+
+<section>
+  <h2 class="cathedral">Body Canon (Non-Negotiable)</h2>
+  <div class="body-canon">
+    <div class="rule-line">Law · not style</div>
+    <h3>The Mino were never one body.</h3>
+    <p>An army of two thousand women is <em>never</em> two thousand copies of the same body. The regiment held pregnant warriors waiting on the back-line, elders with forty years of drill memory, earth-mother anchors who held the centre, and wiry fast-runners who flanked at speed. <strong>All four body types are canon.</strong> Any Agojie-group manifestation — painting, render, cinematic, game-asset — must carry the full spectrum.</p>
+    <p>When AI tools default to uniform slim bodies on a group prompt — as documented on 2026-04-18 for the Aziza council — <em>that is the colonial filter speaking</em>. The Mino are one of the named reclamations that most often trigger it, because the "barbarian amazon" archetype was pre-sexualized by European artists for four hundred years. Cathedral canon refuses that frame. <strong>Document the refusal. Work around it. Regenerate until the sovereign body lands.</strong></p>
+    <p>Red ochre on the face. Kaolin chalk for ceremony. Cowrie-belt across whatever chest is there. The Mino are warriors, not models. <em>The oath was in the body before it was in the mouth.</em></p>
+  </div>
+</section>
+
+<section>
+  <h2>Class Mechanics (NOMOS)</h2>
+  <div class="mechanics">
+    <div class="mech-card"><h4>Frontline Elite</h4><p>Melee + ranged hybrid. Equips flintlock for the opening volley, switches to machete when pressed. Highest base armour of any Cathedral covenant-class.</p></div>
+    <div class="mech-card"><h4>Bayonet Charge (Signature)</h4><p>Consumes the current musket round to trigger a high-damage charge attack. Pushes through the first enemy rank and applies a morale-break debuff to the second.</p></div>
+    <div class="mech-card"><h4>Hold the Line (Passive)</h4><p>While in formation with at least one adjacent Agojie, gains damage resistance and stagger-immunity. Breaks formation and the buff drops — the oath is literal.</p></div>
+    <div class="mech-card"><h4>Death Before Retreat</h4><p>Cannot flee while the queen-unit is on the field. At low health the damage output scales up instead of down. If she falls her cowrie-sash drops — any sister-unit who recovers it gains a campaign-long buff.</p></div>
+    <div class="mech-card"><h4>Covenant to the Queen</h4><p>Linked to a named sovereign. If the queen-unit perishes, all Agojie on the field enter a rage-state for the remainder of the battle — raw damage, no debuffs can land.</p></div>
+    <div class="mech-card"><h4>Cowrie-Sash Economy</h4><p>Sashes recovered from fallen sisters are a <em>legacy currency</em>. They can only be spent on training the next generation of Mino — never on equipment, never on food. Canon-enforced.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Cross-References</h2>
+  <div class="refs-grid">
+    <a class="ref-card" href="/canon/aziza"><div class="ref-label">Teacher tradition</div><div class="ref-name">Aziza</div><div class="ref-desc">Fon forest spirits · taught the grandmothers of the Mino the covenant of iron and fire.</div></a>
+    <a class="ref-card" href="/canon/nyahbinghi"><div class="ref-label">Sister regiment</div><div class="ref-name">Nyahbinghi</div><div class="ref-desc">East African queen-warrior tradition · Rwanda / Uganda · sovereign anti-colonial spirit.</div></a>
+    <a class="ref-card" href="/canon/asafo"><div class="ref-label">Allied lineage</div><div class="ref-name">Asafo</div><div class="ref-desc">Akan military companies · Fante coastal covenant-guards · flag-bearers of the community.</div></a>
+    <a class="ref-card" href="/canon/soucouyant"><div class="ref-label">Elder sibling</div><div class="ref-name">Soucouyant</div><div class="ref-desc">Caribbean skin-shedder · Cathedral elder form of the blood-drinker.</div></a>
+    <a class="ref-card" href="/canon"><div class="ref-label">Full canon</div><div class="ref-name">The Cathedral Canon</div><div class="ref-desc">42 named beings · sovereign Black-first registry.</div></a>
+  </div>
+</section>
+
+</div>
+<footer>
+  <a href="/">Cathedral</a><a href="/canon">Canon</a><a href="/canon/aziza">Aziza</a><a href="/canon/soucouyant">Soucouyant</a>
+  <div class="tagline-footer">Sovereign Black-first reclamation · The oath was in the body before it was in the mouth.</div>
+</footer>
+</body>
+</html>
