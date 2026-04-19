@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cathedral Canon — Agape Intelligent Systems</title>
+<meta name="description" content="The sovereign Black-first canon of named beings — factions, creatures, animal council, and pawns from the Cathedral universe. Cultural reclamation in practice.">
+<meta property="og:title" content="Cathedral Canon — Agape IS">
+<meta property="og:description" content="Sovereign Black-first named beings · reclaiming fantasy archetypes from African and diasporic tradition.">
+<link rel="canonical" href="https://cathedral.black/canon">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='none' stroke='%23fcd34d' stroke-width='1.5'/><circle cx='16' cy='16' r='3' fill='%23fcd34d'/></svg>">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0a0603;
+  --bg2:#140a05;
+  --gold:#fcd34d;
+  --amber:#d4a574;
+  --cream:#e4c48c;
+  --muted:#8b6a42;
+  --text:#d4a574;
+  --cathedral:#fcd34d;
+  --mandate:#ef4444;
+  --horde:#9ca3af;
+  --threshold:#f59e0b;
+  --mono:'JetBrains Mono','Consolas','Courier New',monospace;
+  --sans:'Space Grotesk',system-ui,-apple-system,sans-serif;
+}
+
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;line-height:1.6}
+::selection{background:var(--gold);color:var(--bg)}
+
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:radial-gradient(circle,rgba(252,211,77,0.05) 1px,transparent 1px);
+  background-size:28px 28px;
+  pointer-events:none;
+  z-index:0;
+}
+
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:48px 24px 80px}
+
+/* ── Header ── */
+header{text-align:center;margin-bottom:64px}
+.crumb{font-family:var(--mono);font-size:10px;letter-spacing:0.4em;color:var(--muted);text-transform:uppercase;margin-bottom:20px}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{color:var(--amber)}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:0.02em;color:var(--gold);line-height:1.1;margin-bottom:16px}
+.tagline{font-size:clamp(0.95rem,1.3vw,1.1rem);color:var(--amber);max-width:680px;margin:0 auto;line-height:1.7}
+.tagline em{color:var(--gold);font-style:normal}
+
+/* ── Search ── */
+.search-wrap{max-width:540px;margin:40px auto 0;position:relative}
+#search{
+  width:100%;
+  background:rgba(20,10,5,0.8);
+  border:1px solid rgba(212,165,116,0.2);
+  color:var(--gold);
+  font-family:var(--mono);
+  font-size:14px;
+  letter-spacing:0.02em;
+  padding:14px 18px 14px 48px;
+  border-radius:2px;
+  outline:none;
+  transition:border-color 0.2s;
+}
+#search::placeholder{color:var(--muted)}
+#search:focus{border-color:var(--gold)}
+.search-icon{
+  position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  color:var(--muted);font-size:18px;pointer-events:none;
+}
+
+/* ── Filter pills ── */
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:28px 0 48px}
+.pill{
+  background:transparent;
+  border:1px solid rgba(212,165,116,0.2);
+  color:var(--amber);
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:0.15em;
+  padding:7px 14px;
+  cursor:pointer;
+  transition:all 0.2s;
+  text-transform:uppercase;
+}
+.pill:hover{border-color:var(--gold);color:var(--gold)}
+.pill.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+
+/* ── Category sections ── */
+.category{margin-bottom:56px}
+.category h2{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.3em;
+  color:var(--muted);
+  text-transform:uppercase;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(212,165,116,0.1);
+  margin-bottom:24px;
+}
+
+/* ── Being grid ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+
+.card{
+  display:block;
+  background:linear-gradient(135deg,rgba(20,10,5,0.9) 0%,rgba(10,6,3,0.9) 100%);
+  border:1px solid rgba(212,165,116,0.15);
+  padding:22px 20px;
+  text-decoration:none;
+  color:inherit;
+  transition:all 0.25s;
+  position:relative;
+  border-left:3px solid var(--cathedral);
+}
+.card:hover{border-color:rgba(252,211,77,0.4);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.card[data-pole="mandate"]{border-left-color:var(--mandate)}
+.card[data-pole="horde"]{border-left-color:var(--horde)}
+.card[data-pole="threshold"]{border-left-color:var(--threshold)}
+
+.card .emoji{font-size:26px;line-height:1;margin-bottom:10px;display:block}
+.card .name{font-size:1.05rem;font-weight:700;color:var(--gold);letter-spacing:0.04em;margin-bottom:6px}
+.card .reclaim{font-family:var(--mono);font-size:9.5px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.card .reclaim strong{color:var(--amber)}
+.card .desc{font-size:0.85rem;color:var(--cream);line-height:1.5;opacity:0.88}
+.card .root{margin-top:10px;font-size:0.72rem;color:var(--muted);font-style:italic}
+
+/* ── Hidden (search filter) ── */
+.card.hide{display:none}
+.category.hide{display:none}
+
+/* ── Footer ── */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  font-size:10px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:rgba(212,165,116,0.35);
+  border-top:1px solid rgba(212,165,116,0.08);
+  margin-top:40px;
+}
+footer a{color:inherit;text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+@media(max-width:640px){
+  .grid{grid-template-columns:1fr}
+  .wrap{padding:32px 16px 60px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="crumb"><a href="/">Cathedral</a> · Canon</div>
+  <h1>The Cathedral Canon</h1>
+  <p class="tagline">A sovereign <em>Black-first</em> registry of named beings — factions, creatures, animal council, and pawns. Reclaimed from African and diasporic tradition. Every colonial fantasy archetype has an older, truer name.</p>
+
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input id="search" type="text" placeholder="Search (try: druid · elf · vampire · Okomfo · Agojie · Lilim)" autocomplete="off">
+  </div>
+
+  <div class="filters">
+    <button class="pill active" data-filter="all">All</button>
+    <button class="pill" data-filter="cathedral">Cathedral</button>
+    <button class="pill" data-filter="threshold">Threshold</button>
+    <button class="pill" data-filter="horde">Horde</button>
+    <button class="pill" data-filter="creature">Creatures</button>
+    <button class="pill" data-filter="council">Animal Council</button>
+    <button class="pill" data-filter="pawn">Pawns</button>
+  </div>
+</header>
+
+<!-- ─── CATHEDRAL FACTIONS ─── -->
+<section class="category" data-category="cathedral">
+  <h2>⚔️ Cathedral Factions</h2>
+  <div class="grid">
+    <a class="card" data-pole="cathedral" data-tags="nyahbinghi rastafari drum warrior paladin" href="/canon/nyahbinghi">
+      <span class="emoji">🥁</span>
+      <div class="name">Nyahbinghi Order</div>
+      <div class="reclaim">Reclaims <strong>paladin</strong> · Rastafari</div>
+      <div class="desc">Drum-warrior resistance mansion. Three drums chant down Babylon. Name means "death to all oppressors."</div>
+      <div class="root">Root: Rastafari · East Africa → Jamaica</div>
+    </a>
+    <a class="card" data-pole="cathedral" data-tags="aziza elf forest fon dahomey fire" href="/canon/aziza">
+      <span class="emoji">🌿</span>
+      <div class="name">Aziza</div>
+      <div class="reclaim">Reclaims <strong>elf</strong> · Fon / Dahomey</div>
+      <div class="desc">Forest teachers older than empire. They taught humans fire. Ital by ancestral law.</div>
+      <div class="root">Root: Fon · Dahomey (Benin)</div>
+    </a>
+    <a class="card" data-pole="cathedral" data-tags="okomfo druid shaman akan spirit" href="/canon/okomfo">
+      <span class="emoji">🐾</span>
+      <div class="name">Okomfo</div>
+      <div class="reclaim">Reclaims <strong>druid</strong> · Akan</div>
+      <div class="desc">Shrine-law mediator. Commune with an 18-animal council. Okomfo Anokye called down the Golden Stool.</div>
+      <div class="root">Root: Akan · Ghana</div>
+    </a>
+    <a class="card" data-pole="cathedral" data-tags="agojie mino barbarian amazon dahomey warrior women" href="/canon/agojie">
+      <span class="emoji">⚔️</span>
+      <div class="name">Agojie (Mino)</div>
+      <div class="reclaim">Reclaims <strong>barbarian / amazon</strong> · Fon</div>
+      <div class="desc">Historically real all-women warrior regiment of Dahomey. Queen Hangbe (1708) → Ghezo (1818).</div>
+      <div class="root">Root: Fon · Dahomey historical 1600s–1890s</div>
+    </a>
+    <a class="card" data-pole="cathedral" data-tags="asafo fighter knight akan fante military" href="/canon/asafo">
+      <span class="emoji">🛡️</span>
+      <div class="name">Asafo</div>
+      <div class="reclaim">Reclaims <strong>fighter / knight order</strong> · Akan</div>
+      <div class="desc">Fante civic-military brotherhoods. 8-rank hierarchy. Appliqué flags encode proverbs.</div>
+      <div class="root">Root: Akan · Ghana · Fante coastal</div>
+    </a>
+    <a class="card" data-pole="cathedral" data-tags="griot bard mande mali kora memory" href="/canon/griot">
+      <span class="emoji">🎵</span>
+      <div class="name">Griot (Jali)</div>
+      <div class="reclaim">Reclaims <strong>bard</strong> · Mandé</div>
+      <div class="desc">The library of Africa in human form. 21-string kora. Seventy-generation memory.</div>
+      <div class="root">Root: Mandé · Mali / Senegal / Gambia</div>
+    </a>
+    <a class="card" data-pole="cathedral" data-tags="babalawo wizard seer scholar yoruba ifa odu" href="/canon/babalawo">
+      <span class="emoji">🔮</span>
+      <div class="name">Babalawo</div>
+      <div class="reclaim">Reclaims <strong>wizard / seer</strong> · Yoruba</div>
+      <div class="desc">Father of secrets. Ifa diviner. 256 Odu. Palm nuts and opele chain.</div>
+      <div class="root">Root: Yoruba · Nigeria / Benin</div>
+    </a>
+  </div>
+</section>
+
+<!-- ─── THRESHOLD ─── -->
+<section class="category" data-category="threshold">
+  <h2>🌗 Threshold · Morally Complex</h2>
+  <div class="grid">
+    <a class="card" data-pole="threshold" data-tags="bokor warlock vodou haiti both hands" href="/canon/bokor">
+      <span class="emoji">🕯</span>
+      <div class="name">Bokor</div>
+      <div class="reclaim">Reclaims <strong>warlock</strong> · Haitian Vodou</div>
+      <div class="desc">Works both hands — light and dark. Raises the dead, binds spirits, cures or curses.</div>
+      <div class="root">Root: Vodou · Haiti</div>
+    </a>
+    <a class="card" data-pole="threshold" data-tags="obeahwoman witch jamaica spirit duppy" href="/canon/obeahwoman">
+      <span class="emoji">🌙</span>
+      <div class="name">Obeahwoman</div>
+      <div class="reclaim">Reclaims <strong>witch</strong> (slur reclaim) · Jamaica</div>
+      <div class="desc">Spirit-worker full spectrum. Duppy-binding. Silk-cotton tree amplifier.</div>
+      <div class="root">Root: Jamaica · West African syncretic</div>
+    </a>
+  </div>
+</section>
+
+<!-- ─── CREATURES ─── -->
+<section class="category" data-category="creature">
+  <h2>🧛 Creatures · Spirits · Beings</h2>
+  <div class="grid">
+    <a class="card" data-pole="horde" data-tags="lilim succubus desire demon charmer obayifo soucouyant unskinned fallen" href="/canon/lilim">
+      <span class="emoji">🖤</span>
+      <div class="name">Lilim · The Unskinned</div>
+      <div class="reclaim">Reclaims <strong>succubus / desire demon</strong> · Obayifo + Soucouyant lineage</div>
+      <div class="desc">A Cathedral Soucouyant whose skin the Horde captured. The Named Charmer. "RSVP with your chains."</div>
+      <div class="root">Root: Akan · Caribbean · pre-Abrahamic Hebrew</div>
+    </a>
+    <a class="card" data-pole="creature" data-tags="soucouyant vampire fireball skin shedder trinidad caribbean" href="/canon/soucouyant">
+      <span class="emoji">🔥</span>
+      <div class="name">Soucouyant</div>
+      <div class="reclaim">Reclaims <strong>vampire (female)</strong> · Trinidad / Caribbean</div>
+      <div class="desc">Sheds skin at night, flies as fireball, drinks blood. Defeated by salt on skin or rice counting.</div>
+      <div class="root">Root: Trinidadian folklore · Caribbean</div>
+    </a>
+    <a class="card" data-pole="creature" data-tags="ligahoo werewolf shapeshifter trinidad chains coffin" href="/canon/ligahoo">
+      <span class="emoji">🐺</span>
+      <div class="name">Ligahoo</div>
+      <div class="reclaim">Reclaims <strong>werewolf</strong> · Trinidad</div>
+      <div class="desc">Chooses animal form. Drags chains and coffin. Crossroads-walker.</div>
+      <div class="root">Root: Trinidad · Caribbean</div>
+    </a>
+    <a class="card" data-pole="creature" data-tags="leopard society ekpe shapeshifter west africa warrior brotherhood" href="/canon/leopard_society">
+      <span class="emoji">🐆</span>
+      <div class="name">Leopard Society</div>
+      <div class="reclaim">Reclaims <strong>male shapeshifter warrior</strong> · Ekpe / West Africa</div>
+      <div class="desc">Initiates who ritually become leopard. Secret society. Nsibidi-marked.</div>
+      <div class="root">Root: Ekpe · Cross River (Nigeria / Cameroon)</div>
+    </a>
+    <a class="card" data-pole="creature" data-tags="ninki nanka dragon gambia mandinka serpent" href="/canon/ninki_nanka">
+      <span class="emoji">🐉</span>
+      <div class="name">Ninki Nanka</div>
+      <div class="reclaim">Reclaims <strong>dragon</strong> · Gambia</div>
+      <div class="desc">Serpentine with three horns. Swamp-dweller. Gaze alone brings fever or death.</div>
+      <div class="root">Root: Gambia · Mandinka</div>
+    </a>
+    <a class="card" data-pole="creature" data-tags="mmoatia fairy sprite akan forest backwards feet" href="/canon/mmoatia">
+      <span class="emoji">🧚🏿</span>
+      <div class="name">Mmoatia</div>
+      <div class="reclaim">Reclaims <strong>fairy / sprite</strong> · Akan</div>
+      <div class="desc">One-foot-tall forest beings. Three colors (red/black/white). Feet turned backward. Whistle-speakers.</div>
+      <div class="root">Root: Akan · Ghana</div>
+    </a>
+  </div>
+</section>
+
+<!-- ─── ANIMAL COUNCIL ─── -->
+<section class="category" data-category="council">
+  <h2>🐾 The Okomfo Animal Council (18)</h2>
+  <div class="grid">
+    <a class="card" data-pole="cathedral" data-tags="sankofa bird akan memory ancestral" href="/canon/sankofa"><span class="emoji">🦅</span><div class="name">Sankofa</div><div class="reclaim">Memory · <strong>Akan</strong></div><div class="desc">Bird that looks backward while flying forward. "Go back and get it."</div></a>
+    <a class="card" data-pole="cathedral" data-tags="anansi spider trickster akan caribbean stories" href="/canon/anansi"><span class="emoji">🕷</span><div class="name">Anansi</div><div class="reclaim">Stories · <strong>Akan</strong></div><div class="desc">Trickster spider. Owns all stories. Won them from Nyame the sky-god.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="elephant matriarch wisdom grief pan-african" href="/canon/elephant"><span class="emoji">🐘</span><div class="name">Elephant</div><div class="reclaim">Elder council · <strong>Pan-African</strong></div><div class="desc">Matriarch wisdom. Grief. Time. Nothing forgotten.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="python damballa vodou fon serpent primordial" href="/canon/python"><span class="emoji">🐍</span><div class="name">Python · Damballa</div><div class="reclaim">Primordial · <strong>Vodou / Fon</strong></div><div class="desc">Sky-to-earth connector. Rainbow serpent. Creation breath.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="bennu heron kemet rebirth phoenix" href="/canon/bennu"><span class="emoji">🦢</span><div class="name">Bennu</div><div class="reclaim">Rebirth · <strong>Kemet</strong></div><div class="desc">Sacred heron. Self-created at first sunrise. Proto-phoenix.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="ibis tehuti thoth kemet writing wisdom" href="/canon/ibis"><span class="emoji">🦤</span><div class="name">Ibis · Tehuti</div><div class="reclaim">Writing · <strong>Kemet</strong></div><div class="desc">Scribe of the gods. Keeper of all names. Divine record.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="impundulu lightning bird zulu xhosa storm" href="/canon/impundulu"><span class="emoji">⚡</span><div class="name">Impundulu</div><div class="reclaim">Storm · <strong>Zulu / Xhosa</strong></div><div class="desc">Lightning bird. Wild power. Familiar of the storm-walkers.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="secretary bird africa justice snake-slayer" href="/canon/secretary_bird"><span class="emoji">🦅</span><div class="name">Secretary Bird</div><div class="reclaim">Justice · <strong>Pan-African</strong></div><div class="desc">Stomps serpents. Warrior of the plain.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="leopard stealth sovereignty west africa" href="/canon/leopard"><span class="emoji">🐆</span><div class="name">Leopard</div><div class="reclaim">Sovereignty · <strong>West Africa</strong></div><div class="desc">Sacred warrior. Stealth. Apex predator as spiritual identity.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="tortoise ijapa yoruba trickster wisdom" href="/canon/tortoise"><span class="emoji">🐢</span><div class="name">Tortoise · Ijapa</div><div class="reclaim">Slow wisdom · <strong>Yoruba</strong></div><div class="desc">Trickster of measured time. Outlasts everything.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="cape buffalo africa community defense" href="/canon/cape_buffalo"><span class="emoji">🐃</span><div class="name">Cape Buffalo</div><div class="reclaim">Cannot be tamed · <strong>Pan-African</strong></div><div class="desc">Community defense. Ancestral fury. Untameable.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="crocodile sobek kemet nile patience" href="/canon/crocodile"><span class="emoji">🐊</span><div class="name">Crocodile · Sobek</div><div class="reclaim">Patience · <strong>Kemet</strong></div><div class="desc">Primal law. The river remembers.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="sea turtle navigation diaspora ocean ancient" href="/canon/sea_turtle"><span class="emoji">🐢</span><div class="name">Sea Turtle</div><div class="reclaim">Navigation · <strong>Pan-diaspora</strong></div><div class="desc">Carries worlds. The Middle Passage remembered. Kalunga-crossing.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="manatee mami wata water spirit healing" href="/canon/mami_wata"><span class="emoji">🧜🏿</span><div class="name">Manatee · Mami Wata</div><div class="reclaim">Water spirit · <strong>Pan-African</strong></div><div class="desc">Between form and formless. Healing. Seduction. Drowning.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="scarab khepri kemet transformation sun rebirth" href="/canon/scarab"><span class="emoji">🪲</span><div class="name">Scarab · Khepri</div><div class="reclaim">Transformation · <strong>Kemet</strong></div><div class="desc">Rolls the sun. Rebirth engine. Dawn made manifest.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="vulture nekhbet kemet mother protection" href="/canon/vulture"><span class="emoji">🦅</span><div class="name">Vulture · Nekhbet</div><div class="reclaim">Mother protection · <strong>Kemet</strong></div><div class="desc">Death and return. Cleansing. Sees everything living and dead.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="adze firefly akan shapeshifter spirit" href="/canon/adze"><span class="emoji">🌟</span><div class="name">Adze</div><div class="reclaim">Shapeshifter · <strong>Akan / Ghana</strong></div><div class="desc">Firefly that becomes human. Ancestor signal. Liminal.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="bee oshun yoruba honey sweetness abundance" href="/canon/bee"><span class="emoji">🐝</span><div class="name">Bee · Oshun</div><div class="reclaim">Sweetness · <strong>Yoruba</strong></div><div class="desc">Collective mind. Honey as sacred currency. Divine abundance.</div></a>
+  </div>
+</section>
+
+<!-- ─── PAWNS ─── -->
+<section class="category" data-category="pawn">
+  <h2>🎭 Named Pawns · Sovereignty Council + Characters</h2>
+  <div class="grid">
+    <a class="card" data-pole="cathedral" data-tags="gus shepherd governor agape nganga 396" href="/canon/gus"><span class="emoji">🛡</span><div class="name">GUS</div><div class="reclaim">Ritual jurist · 396 Hz grounding</div><div class="desc">The nganga. Drives the nail. Keeps the receipt.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="prima signal witness 741" href="/canon/prima"><span class="emoji">✦</span><div class="name">PRIMA</div><div class="reclaim">Signal · 741 Hz witness</div><div class="desc">Naming the seen. Marking the real.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="lambda 528 transform" href="/canon/lambda"><span class="emoji">Λ</span><div class="name">LAMBDA</div><div class="reclaim">Transform · 528 Hz</div><div class="desc">The function that changes the state.</div></a>
+    <a class="card" data-pole="threshold" data-tags="sigma 7 augmented cyborg nkisi cathedral mandate" href="/canon/sigma_7"><span class="emoji">Σ</span><div class="name">Sigma 7 (Σ-7)</div><div class="reclaim">Augmented sovereign · 852 Hz</div><div class="desc">Wears the machine but the machine doesn't wear him. Nkisi-core survivor.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="dj warrior monk ital self avatar" href="/canon/dj"><span class="emoji">🥋</span><div class="name">DJ</div><div class="reclaim">Warrior monk</div><div class="desc">Ital discipline. The creator-in-world.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="aunt mos druid obeah okomfo 528 paw lane" href="/canon/aunt_mos"><span class="emoji">🌿</span><div class="name">Aunt MOS</div><div class="reclaim">Okomfo of PAW LANE · 528 Hz</div><div class="desc">Bridges V1 pawns with new faction canon.</div></a>
+    <a class="card" data-pole="cathedral" data-tags="vel crossover fighter outfit armor" href="/canon/vel"><span class="emoji">⚔</span><div class="name">Vel</div><div class="reclaim">Crossover fighter</div><div class="desc">Universal weapon proficiency. Outfit-as-strategy.</div></a>
+  </div>
+</section>
+
+<footer>
+  Black-first · Patois-native · Zero Harm covenant · PRIMA-stamped<br>
+  <a href="/">← Agape Intelligent Systems</a> · <a href="/manifesto">Manifesto</a> · Canon v0.1
+</footer>
+
+</div>
+
+<script>
+const search = document.getElementById('search');
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.card');
+const categories = document.querySelectorAll('.category');
+let activeFilter = 'all';
+
+function applyFilters(){
+  const q = search.value.trim().toLowerCase();
+  cards.forEach(c => {
+    const tags = (c.dataset.tags || '').toLowerCase();
+    const name = c.querySelector('.name').textContent.toLowerCase();
+    const desc = c.querySelector('.desc')?.textContent.toLowerCase() || '';
+    const reclaim = c.querySelector('.reclaim')?.textContent.toLowerCase() || '';
+    const pole = c.dataset.pole;
+    const catEl = c.closest('.category');
+    const cat = catEl?.dataset.category;
+
+    let matchesQ = !q || tags.includes(q) || name.includes(q) || desc.includes(q) || reclaim.includes(q);
+    let matchesF = activeFilter === 'all' || cat === activeFilter || pole === activeFilter;
+
+    c.classList.toggle('hide', !(matchesQ && matchesF));
+  });
+
+  // Hide empty categories
+  categories.forEach(cat => {
+    const visible = cat.querySelectorAll('.card:not(.hide)').length;
+    cat.classList.toggle('hide', visible === 0);
+  });
+}
+
+search.addEventListener('input', applyFilters);
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeFilter = p.dataset.filter;
+    applyFilters();
+  });
+});
+</script>
+
+</body>
+</html>

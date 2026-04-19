@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lilim · The Unskinned — Cathedral Canon</title>
+<meta name="description" content="Lilim (The Unskinned · The Fallen Obayifo) — a Cathedral Soucouyant captured by the Horde. Black-first reclamation of the succubus archetype. Agape Intelligent Systems canon.">
+<meta property="og:title" content="Lilim · The Unskinned — Cathedral Canon">
+<meta property="og:description" content="Sovereign Black-first reclamation of the succubus archetype. Once Cathedral, now Horde-claimed. Tragic antagonist canon.">
+<meta property="og:url" content="https://cathedral.black/canon/lilim">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://cathedral.black/canon/lilim/assets/lilim-charmer-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://cathedral.black/canon/lilim">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='none' stroke='%23dc2626' stroke-width='1.5'/><circle cx='16' cy='16' r='3' fill='%23dc2626'/></svg>">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0a0603;
+  --bg2:#14080a;
+  --bg3:#1f0a0f;
+  --gold:#fcd34d;
+  --amber:#d4a574;
+  --cream:#e4c48c;
+  --muted:#8b6a42;
+  --text:#d4a574;
+  --horde-red:#dc2626;
+  --horde-red-dim:#7c2d12;
+  --tint:var(--horde-red);
+  --cathedral:#fcd34d;
+  --threshold:#f59e0b;
+  --mono:'JetBrains Mono','Consolas','Courier New',monospace;
+  --sans:'Space Grotesk',system-ui,-apple-system,sans-serif;
+}
+
+html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+::selection{background:var(--horde-red);color:#fff}
+
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:radial-gradient(circle,rgba(220,38,38,0.04) 1px,transparent 1px);
+  background-size:36px 36px;
+  pointer-events:none;
+  z-index:0;
+}
+
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:32px 24px 80px}
+
+/* ── Breadcrumb ── */
+.crumb{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.4em;
+  color:var(--muted);text-transform:uppercase;margin-bottom:32px;
+}
+.crumb a{color:var(--muted);text-decoration:none;transition:color 0.2s}
+.crumb a:hover{color:var(--amber)}
+.crumb .current{color:var(--horde-red)}
+
+/* ── Hero ── */
+.hero{
+  position:relative;
+  margin-bottom:40px;
+  border:1px solid rgba(220,38,38,0.3);
+  overflow:hidden;
+  background:#000;
+}
+.hero video{
+  width:100%;
+  height:auto;
+  display:block;
+  max-height:78vh;
+  object-fit:contain;
+}
+.hero::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 60%,rgba(10,6,3,0.6) 100%);
+  pointer-events:none;
+}
+.hero-caption{
+  position:absolute;
+  bottom:14px;left:18px;
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:0.3em;
+  color:rgba(220,38,38,0.7);
+  text-transform:uppercase;
+  pointer-events:none;
+  text-shadow:0 1px 4px rgba(0,0,0,0.9);
+}
+
+/* ── Title block ── */
+.title-block{text-align:center;margin:0 0 48px;padding:24px 0 0}
+.name-primary{
+  font-size:clamp(3rem,9vw,6rem);
+  font-weight:800;
+  letter-spacing:0.04em;
+  color:var(--gold);
+  line-height:1.0;
+  margin-bottom:12px;
+}
+.name-subtitles{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.3em;
+  color:var(--horde-red);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.name-subtitles .sep{color:var(--muted);margin:0 10px}
+.pronunciation{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.15em;
+  color:var(--muted);
+  font-style:italic;
+}
+
+/* ── Tagline (her card quote) ── */
+.tagline{
+  margin:0 auto 56px;
+  max-width:680px;
+  padding:32px 28px;
+  border-top:1px solid rgba(220,38,38,0.15);
+  border-bottom:1px solid rgba(220,38,38,0.15);
+  text-align:center;
+}
+.tagline blockquote{
+  font-size:clamp(1.15rem,2vw,1.4rem);
+  font-style:italic;
+  color:var(--cream);
+  line-height:1.7;
+  margin-bottom:12px;
+}
+.tagline .attribution{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.3em;
+  color:var(--horde-red);text-transform:uppercase;
+}
+
+/* ── Sections ── */
+section{margin-bottom:60px}
+h2{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.4em;
+  color:var(--muted);
+  text-transform:uppercase;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(212,165,116,0.12);
+  margin-bottom:24px;
+}
+h2.horde{color:var(--horde-red);border-bottom-color:rgba(220,38,38,0.15)}
+
+p{margin-bottom:18px;font-size:1rem;color:var(--cream)}
+p:last-child{margin-bottom:0}
+em{color:var(--gold);font-style:italic}
+strong{color:var(--amber)}
+
+/* ── Two forms ── */
+.forms-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+.form-card{
+  background:linear-gradient(135deg,rgba(20,10,6,0.9),rgba(31,10,15,0.9));
+  border:1px solid rgba(220,38,38,0.2);
+  overflow:hidden;
+}
+.form-card img{width:100%;height:380px;object-fit:cover;display:block}
+.form-card .form-body{padding:18px 20px}
+.form-card h3{
+  font-size:14px;font-weight:700;color:var(--gold);
+  letter-spacing:0.05em;margin-bottom:8px;
+}
+.form-card .form-tag{
+  font-family:var(--mono);font-size:9px;letter-spacing:0.25em;
+  color:var(--horde-red);text-transform:uppercase;margin-bottom:12px;
+}
+.form-card p{font-size:0.88rem;color:var(--cream);opacity:0.9;margin:0;line-height:1.5}
+
+/* ── Facts table ── */
+.facts{
+  display:grid;grid-template-columns:130px 1fr;
+  gap:10px 24px;
+  background:rgba(20,10,6,0.6);
+  border:1px solid rgba(212,165,116,0.1);
+  padding:24px 28px;
+}
+.facts dt{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.25em;
+  color:var(--muted);text-transform:uppercase;align-self:center;
+}
+.facts dd{color:var(--cream);font-size:0.95rem}
+.facts .horde-tag{color:var(--horde-red);font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase}
+
+/* ── Defeat mechanics grid ── */
+.defeats{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;
+}
+.defeat-card{
+  background:linear-gradient(135deg,rgba(20,10,6,0.9),rgba(10,6,3,0.9));
+  border:1px solid rgba(212,165,116,0.15);
+  border-left:3px solid var(--horde-red);
+  padding:18px 20px;
+}
+.defeat-card h4{
+  font-size:14px;color:var(--gold);margin-bottom:8px;letter-spacing:0.03em;
+}
+.defeat-card p{font-size:0.85rem;color:var(--cream);line-height:1.5;margin:0;opacity:0.92}
+
+/* ── Moral choice ── */
+.moral-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.moral-card{
+  background:rgba(20,10,6,0.8);
+  border:1px solid rgba(212,165,116,0.15);
+  padding:22px 24px;
+}
+.moral-card .label{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.25em;
+  color:var(--horde-red);text-transform:uppercase;margin-bottom:10px;
+}
+.moral-card h4{font-size:16px;color:var(--gold);margin-bottom:10px}
+.moral-card p{font-size:0.88rem;margin:0;color:var(--cream);line-height:1.55}
+
+.moral-summary{
+  text-align:center;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:0.35em;
+  color:var(--horde-red);
+  text-transform:uppercase;
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px dashed rgba(220,38,38,0.2);
+}
+
+/* ── Video arc (4-beat breakdown) ── */
+.arc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.arc-beat{background:rgba(20,10,6,0.8);border:1px solid rgba(212,165,116,0.1)}
+.arc-beat img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.arc-beat .beat-body{padding:10px 12px 14px}
+.arc-beat .beat-num{
+  font-family:var(--mono);font-size:9px;letter-spacing:0.2em;
+  color:var(--horde-red);text-transform:uppercase;margin-bottom:4px;
+}
+.arc-beat .beat-time{
+  font-family:var(--mono);font-size:9px;color:var(--muted);margin-bottom:6px;
+}
+.arc-beat h4{font-size:13px;color:var(--gold);margin-bottom:4px;letter-spacing:0.02em}
+.arc-beat p{font-size:0.78rem;color:var(--cream);line-height:1.45;margin:0;opacity:0.88}
+
+/* ── Charmer video section ── */
+.charmer-video{
+  background:#000;
+  border:1px solid rgba(220,38,38,0.2);
+  overflow:hidden;
+  margin-top:16px;
+}
+.charmer-video video{width:100%;height:auto;display:block}
+
+/* ── Cross-refs ── */
+.refs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.ref-card{
+  background:rgba(20,10,6,0.6);
+  border:1px solid rgba(212,165,116,0.12);
+  padding:14px 18px;
+  color:var(--cream);
+  text-decoration:none;
+  transition:all 0.2s;
+  display:block;
+}
+.ref-card:hover{border-color:rgba(212,165,116,0.35);transform:translateY(-1px)}
+.ref-card .ref-label{
+  font-family:var(--mono);font-size:9px;letter-spacing:0.2em;
+  color:var(--muted);text-transform:uppercase;margin-bottom:4px;
+}
+.ref-card .ref-name{font-size:0.92rem;color:var(--gold);font-weight:600}
+.ref-card .ref-desc{font-size:0.78rem;color:var(--cream);opacity:0.8;margin-top:4px;line-height:1.4}
+
+/* ── Sources ── */
+.sources{
+  font-size:0.78rem;
+  color:var(--muted);
+  line-height:1.8;
+  font-style:italic;
+}
+
+/* ── Footer nav ── */
+footer{
+  text-align:center;
+  padding:32px 20px;
+  font-size:10px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:rgba(212,165,116,0.35);
+  border-top:1px solid rgba(212,165,116,0.08);
+  margin-top:48px;
+}
+footer a{color:var(--amber);text-decoration:none;margin:0 10px;transition:color 0.2s}
+footer a:hover{color:var(--gold)}
+footer .tagline-footer{margin-top:12px;font-style:italic;color:rgba(212,165,116,0.5)}
+
+@media(max-width:720px){
+  .wrap{padding:24px 16px 60px}
+  .forms-grid{grid-template-columns:1fr}
+  .moral-grid{grid-template-columns:1fr}
+  .arc-grid{grid-template-columns:repeat(2,1fr)}
+  .facts{grid-template-columns:1fr;gap:4px 0}
+  .facts dt{margin-top:12px}
+  .facts dt:first-child{margin-top:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- Breadcrumb -->
+<div class="crumb">
+  <a href="/">Cathedral</a> · <a href="/canon">Canon</a> · <span class="current">Lilim</span>
+</div>
+
+<!-- Hero video -->
+<div class="hero">
+  <video autoplay muted loop playsinline poster="/canon/lilim/assets/beat2-ritual-peak.png">
+    <source src="/canon/lilim/assets/lilim-30sec-hero.mp4" type="video/mp4">
+    Your browser doesn't support this video.
+  </video>
+  <div class="hero-caption">Revealed form · 30-sec ritual arc · Grok Imagine 2026-04-19</div>
+</div>
+
+<!-- Title -->
+<div class="title-block">
+  <div class="name-primary">LILIM</div>
+  <div class="name-subtitles">
+    The Unskinned <span class="sep">·</span> The Fallen Obayifo
+  </div>
+  <div class="pronunciation">LEE · leem</div>
+</div>
+
+<!-- Tagline / card quote -->
+<div class="tagline">
+  <blockquote>"You are cordially invited to witness your own unraveling.<br>RSVP with your chains."</blockquote>
+  <div class="attribution">— the words on her card</div>
+</div>
+
+<!-- Who she is -->
+<section>
+  <h2 class="horde">Who She Is</h2>
+  <p>Lilim was once an <strong>Obayifo</strong> of the Caribbean Cathedral lineage — a Black Soucouyant who practiced the sacred skin-shedding rite to travel as a fireball spirit and keep ancestral watch over her parish. She was beautiful. She was sovereign. <em>She was dangerous the right way.</em></p>
+  <p>Then the Horde found her skin mid-transformation. They took it.</p>
+  <p>Without her skin, she could not return to her body. She became a permanent wanderer in the liminal space between forms. The Horde offered her a new skin — one made of appetite, captivity, and corruption. <strong>She accepted.</strong></p>
+  <p>Now she serves as the Horde's primary <strong>Named Charmer</strong> — appearing to Cathedral people as a beautiful, familiar Black woman, extending gilded invitations to ceremonies of their own destruction. She still looks like herself because she IS herself. But her nkisi-core is Horde-claimed. Her one amber eye is the Cathedral self that remembers. Her one Horde-red eye is what owns her now.</p>
+  <p><em>She is the cautionary tale of what whiteness does to Black sovereignty when it captures it.</em></p>
+</section>
+
+<!-- Two forms -->
+<section>
+  <h2>Two Forms</h2>
+  <div class="forms-grid">
+    <div class="form-card">
+      <img src="/canon/lilim/assets/lilim-charmer-hero.jpg" alt="Lilim in charmer form — thick curvy Black body, Adinkra chest markings, gold chains, horns curving through locs, standing in ruined cathedral holding gilded invitation card">
+      <div class="form-body">
+        <div class="form-tag">The Invitation</div>
+        <h3>Charmer Form</h3>
+        <p>Stunning Black woman in her prime. Curvy ancestral body. Long locs with gold beads and one tarnished cowrie — the last of her Cathedral adornment. Gold body-chain jewelry, single black silk wrap. Small knowing smile. Candles flicker. She asks softly. <strong>This is the form Cathedral people see before they fall.</strong></p>
+      </div>
+    </div>
+    <div class="form-card">
+      <img src="/canon/lilim/assets/beat4-apotheosis.png" alt="Lilim in revealed form — horns fully crowned, Adinkra wounds bleeding gold, pale Horde watchers, fire ritual apotheosis">
+      <div class="form-body">
+        <div class="form-tag">The Feeding</div>
+        <h3>Revealed Form</h3>
+        <p>The corruption visible. Matte-black horns curving from her forehead. One amber eye, one glowing Horde-red. Original white clay Adinkra markings now inverted — active wounds bleeding Horde-sickness across her chest. Patches of skin going Horde-waxy grey. Too-long canines. Beautiful ancestral body still hers, but wrong — draining, in mid-feed. Pale faceless Horde watchers stand behind her. <strong>This is the form Cathedral people see when it's too late.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Facts -->
+<section>
+  <h2>Facts</h2>
+  <dl class="facts">
+    <dt>Root</dt>
+    <dd>Akan <em>Obayifo</em> (vampire-witch) · Caribbean <em>Soucouyant</em> (skin-shedder) · pre-Abrahamic <em>Lilim</em> (night-demon plural)</dd>
+
+    <dt>Pole</dt>
+    <dd><span class="horde-tag">Horde · captured from Cathedral</span></dd>
+
+    <dt>Class</dt>
+    <dd>Named Charmer · threshold antagonist</dd>
+
+    <dt>Frequency</dt>
+    <dd>852 Hz → corrupted (SIGMA/NOMOS law inverted by Horde)</dd>
+
+    <dt>Reclaims</dt>
+    <dd>Succubus · desire demon</dd>
+
+    <dt>First Manifest</dt>
+    <dd>2026-04-19 · Grok Imagine v3 · volume-play strategy</dd>
+  </dl>
+</section>
+
+<!-- Defeat mechanics -->
+<section>
+  <h2 class="horde">How She Is Defeated</h2>
+  <p>Because she was <em>once Cathedral</em>, she has weaknesses the Horde cannot fix.</p>
+  <div class="defeats">
+    <div class="defeat-card">
+      <h4>Recover her lost skin</h4>
+      <p>Her original Soucouyant skin is hidden in a Horde vault. Salting it breaks the Horde's hold.</p>
+    </div>
+    <div class="defeat-card">
+      <h4>Speak her true name</h4>
+      <p>A Griot who recites her ancestry — "Obayifo of [Lineage]" — staggers her. Ancestral memory disrupts the Horde claim.</p>
+    </div>
+    <div class="defeat-card">
+      <h4>Nkisi nkondi nail</h4>
+      <p>Drive a nail into a shrine dedicated to her original Cathedral self. Weakens her. Public witness enforces the covenant.</p>
+    </div>
+    <div class="defeat-card">
+      <h4>Strike her amber eye</h4>
+      <p>Clean strike through her remaining Cathedral eye forces her to her knees. She chooses: die Cathedral, or serve Horde fully.</p>
+    </div>
+    <div class="defeat-card">
+      <h4>Ancestral ebo</h4>
+      <p>Oshun honey + white rum + black rooster offering at her feet forces her to remember. Sometimes this is enough.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Moral choice -->
+<section>
+  <h2 class="horde">Moral Choice at Defeat</h2>
+  <div class="moral-grid">
+    <div class="moral-card">
+      <div class="label">Option A</div>
+      <h4>Kill her</h4>
+      <p>Ends her suffering, but a Cathedral spirit is lost forever. That lineage closes.</p>
+    </div>
+    <div class="moral-card">
+      <div class="label">Option B</div>
+      <h4>Rescue her</h4>
+      <p>Brings a fallen Charmer back as a morally complex threshold ally. Slow redemption arc · risk of re-falling · if redemption completes, she becomes a unique Obeah-class ally with Horde intel.</p>
+    </div>
+  </div>
+  <div class="moral-summary">This is not a monster fight. It is a moral reckoning.</div>
+</section>
+
+<!-- Video arc -->
+<section>
+  <h2>The 30-Second Ritual Arc</h2>
+  <p>The hero video above runs a complete character arc without cuts — feeding → ritual peak → single-horn apotheosis. Each beat:</p>
+  <div class="arc-grid">
+    <div class="arc-beat">
+      <img src="/canon/lilim/assets/beat1-feeding.png" alt="Beat 1 — feeding pose, horns small, tongue out">
+      <div class="beat-body">
+        <div class="beat-num">Beat 1</div>
+        <div class="beat-time">0:00 – 0:07</div>
+        <h4>Feeding</h4>
+        <p>Lower stance. Tongue-out feeding pose. Horns small. Raffia wrap. Adinkra chest markings intact.</p>
+      </div>
+    </div>
+    <div class="arc-beat">
+      <img src="/canon/lilim/assets/beat2-ritual-peak.png" alt="Beat 2 — crown horns, dual torches raised, Horde watchers pressing in">
+      <div class="beat-body">
+        <div class="beat-num">Beat 2</div>
+        <div class="beat-time">0:07 – 0:15</div>
+        <h4>Ritual Peak</h4>
+        <p>Standing fully upright. Horns curving back like crown. Arms raised with torches. Fire pits flaring. Horde crowd pressing in.</p>
+      </div>
+    </div>
+    <div class="arc-beat">
+      <img src="/canon/lilim/assets/beat3-single-horn.png" alt="Beat 3 — single horn spire, squatting pose, flame held">
+      <div class="beat-body">
+        <div class="beat-num">Beat 3</div>
+        <div class="beat-time">0:15 – 0:22</div>
+        <h4>Single-Horn</h4>
+        <p>Horn towering upward like spire. Body lowered in ritual squat. Flame in hand. Horde closer still.</p>
+      </div>
+    </div>
+    <div class="arc-beat">
+      <img src="/canon/lilim/assets/beat4-apotheosis.png" alt="Beat 4 — horn wings apotheosis, full ritual commitment">
+      <div class="beat-body">
+        <div class="beat-num">Beat 4</div>
+        <div class="beat-time">0:22 – 0:30</div>
+        <h4>Apotheosis</h4>
+        <p>Wildest form. Horns swept back like horned wings. Body in full ritual commitment. Fire everywhere. Crowd at peak.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Charmer video -->
+<section>
+  <h2>Her Charmer Form · The Seduction Beat</h2>
+  <p>Before the feeding, before the horns fully crown — she approaches as herself. The familiar Black woman. The smile you almost remember. The invitation card in her hand.</p>
+  <div class="charmer-video">
+    <video autoplay muted loop playsinline>
+      <source src="/canon/lilim/assets/lilim-charmer-6sec.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- Origin note -->
+<section>
+  <h2>Origin · Naming</h2>
+  <p>Lilim is <strong>not</strong> a "Blackified succubus." She is the African and diasporic vampire tradition that <em>predates and surpasses</em> the European succubus concept — now tragically held by the Horde.</p>
+  <p>The name <strong>Lilim</strong> is pre-Abrahamic — Mesopotamian night-demon plural (<em>Lilitu</em>), reclaimed before Judeo-Christian distortion co-opted the root into medieval witch-hunt literature. The form comes from Akan <em>Obayifo</em> (vampire-witch who glows at night and drains life-essence) and Caribbean <em>Soucouyant</em> (skin-shedder who flies as fireball). Together: three lineages fused into one named Horde-captured antagonist.</p>
+  <p>The sovereign Cathedral version remains alive and distinct: see <strong>Soucouyant</strong> (the rightful skin-shedding Obeahworker who practices the rite for night-spirit work, healing, and surveillance). Lilim is what <em>Soucouyant was</em> before the Horde took her skin.</p>
+</section>
+
+<!-- Cross-references -->
+<section>
+  <h2>Cross-References</h2>
+  <div class="refs-grid">
+    <a href="/canon" class="ref-card">
+      <div class="ref-label">Sovereign Counterpart</div>
+      <div class="ref-name">Soucouyant</div>
+      <div class="ref-desc">The Cathedral-aligned skin-shedder. What Lilim was before.</div>
+    </a>
+    <a href="/canon" class="ref-card">
+      <div class="ref-label">Root Tradition</div>
+      <div class="ref-name">Obayifo</div>
+      <div class="ref-desc">Akan vampire-witch lineage.</div>
+    </a>
+    <a href="/canon" class="ref-card">
+      <div class="ref-label">Related</div>
+      <div class="ref-name">Silk-Cotton Tree Spirit</div>
+      <div class="ref-desc">Where sacred skin-shedding was meant to be witnessed.</div>
+    </a>
+    <a href="/canon" class="ref-card">
+      <div class="ref-label">Canonical Enemies</div>
+      <div class="ref-name">Nyahbinghi</div>
+      <div class="ref-desc">Chant her down with the three drums.</div>
+    </a>
+    <a href="/canon" class="ref-card">
+      <div class="ref-label">Canonical Enemies</div>
+      <div class="ref-name">Babalawo</div>
+      <div class="ref-desc">Divines her true name through Ifa.</div>
+    </a>
+    <a href="/canon" class="ref-card">
+      <div class="ref-label">Rescue Alliance</div>
+      <div class="ref-name">Obeahwoman</div>
+      <div class="ref-desc">Knows how to reclaim the lost skin.</div>
+    </a>
+  </div>
+</section>
+
+<!-- Lore bible quote -->
+<section>
+  <h2>Lore Bible Entry</h2>
+  <div class="tagline" style="margin-top:0;margin-bottom:0;border-top:none;border-bottom:none;padding:0;text-align:left">
+    <blockquote style="font-size:1.05rem;line-height:1.85">
+      The Cathedral does not fear the Horde's strength. It fears the Horde's hunger.<br><br>
+      When a Cathedral sister falls to that hunger — when her skin is taken and a new one offered — <em>the wound is not just hers. It is ours.</em><br><br>
+      Lilim walks the ruined cathedrals of the Cathedral's lost cities. She remembers us. She invites us. She hopes we say yes.<br><br>
+      <strong>We say no. We remember her true name. We look for her skin. We bring her home — or we bring her rest.</strong>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Sources -->
+<section>
+  <h2>Sources & Research</h2>
+  <p class="sources">
+    Claude Deep Research Grimoire (2026-04-18) · Kongo nkisi cosmology per Robert Farris Thompson <em>Flash of the Spirit</em> · Soucouyant folklore from Trinidad oral tradition · Obayifo from Akan Asante scholarship (R.S. Rattray · T.C. McCaskie · Ivor Wilks) · pre-Abrahamic Lilim/Lilith from Mesopotamian demonology · Cathedral Reclamation Canon Locks #5 (nkisi oath-seal) + #13 (Cécile Fatiman co-equal framing) + #15 (Queen Hangbe matriarchal precedent). Full lore source: <code>gus-kit/canon/lilim.md</code>
+  </p>
+</section>
+
+<footer>
+  Black-first · Patois-native · Zero Harm covenant · PRIMA-stamped<br>
+  <a href="/canon">← Cathedral Canon</a> · <a href="/">Agape IS</a> · <a href="/manifesto">Manifesto</a>
+  <div class="tagline-footer">She remembers us. We remember her.</div>
+</footer>
+
+</div>
+</body>
+</html>
